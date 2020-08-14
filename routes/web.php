@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('/providers', 'ProvidersController')->except([
+    'show',
+]);
+Route::get('/providers/load', 'ProvidersController@load')->name('providers.load');
